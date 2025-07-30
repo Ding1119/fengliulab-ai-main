@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="AI Neuroimaging Lab – Advancing neurotechnology through research in EEG, brain imaging, mental health, and artificial intelligence">
+    <meta property="og:title" content="AI Neuroimaging Lab" />
+    <meta property="og:description"
+        content="An academic research lab focused on EEG, multimodal neuroimaging, cognitive neuroscience, and AI for brain health" />
+    <meta property="og:url" content="https://qishengjudy.github.io/fengliulab-ai/" />
+    <meta property="og:image" content="static/images/aineuroimaginglab.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:title" content="AI Neuroimaging Lab">
+    <meta name="twitter:description"
+        content="Exploring brain dynamics and mental health using multimodal neuroimaging and deep learning.">
+    <meta name="twitter:image" content="static/images/aineuroimaginglab.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords"
+        content="EEG, Brain Imaging, Neuroimaging, Mental Health, Deep Learning, Multimodal Fusion, Cognitive Neuroscience, iEEG, MEG, AI in Neuroscience, Neurotechnology, NeuroAI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AI Neuroimaging Research Team</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #4A90E2;  
+            --secondary-color: #2C3E50;  
+            --accent-color: #6BA8E5;  
+            --text-primary: #1e1e1e;
+            --text-secondary: #5a5a5a;
+            --bg-primary: #ffffff;
+            --bg-secondary: #d9e1ec;  
+            --border-color: #cfd8e3;
+            --success-color: #5AB9EA;  
+            --gradient-1: linear-gradient(135deg, #4A90E2 0%, #6BA8E5 100%);
+            --gradient-2: linear-gradient(135deg, #3B5998 0%, #4A90E2 100%);
+            --gradient-3: linear-gradient(135deg, #4A90E2 0%, #B3D4FC 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-1);
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-logo {
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background: var(--bg-secondary);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hospital Info */
+        .hospital-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .info-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .info-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+            justify-items: center;
+        }
+
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            border: 4px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .team-member:hover .team-avatar {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .team-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .team-position {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .team-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .team-link:hover {
+            background: #008c5a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 168, 107, 0.3);
+        }
+
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .publication-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        .publication-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px -3px rgba(0, 0, 0, 0.15);
+        }
+
+        .publication-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .publication-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .publication-authors {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .publication-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .publication-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 6px 12px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .publication-link:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .footer-link {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .hospital-info,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                gap: 2rem;
+            }
+
+            .team-member {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .team-avatar-placeholder {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">
+                    <img src="static/images/logo_icon_v2.png" alt="AI Neuroimaging Lab Logo" style="height: 80px;">
+                    AI Neuroimaging Lab
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#team" class="nav-link">Team</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#publications" class="nav-link">Publications</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="static/images/logo_icon_v2.png" alt="AI Neuroimaging Lab" style="height: 300px;">
+                </div>
+
+                <h1 class="title">AI Research Team</h1>
+                <p class="subtitle">
+                    Advancing Research in EEG, Mental Health, and Brain Imaging
+                </p>
+
+                <a href="#publications" class="cta-button">
+                    🔬 Explore Our Research
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section section-light" id="team">
+        <div class="container">
+            <h2 class="section-title">Our Research Team</h2>
+            <p class="section-subtitle">
+                Meet the dedicated researchers driving innovation in medical AI
+            </p>
+            
+            <div class="team-grid">
+<!-- Team Member 1 -->
+<div class="team-member">
+    <div class="team-avatar">
+        <img src="static/images/feng-liu.jpg" alt="Dr. Feng Liu" class="team-avatar-img">
+    </div>
+    <h3 class="team-name">Dr. Feng Liu</h3>
+    <p class="team-position">Professor</p>
+    <a href="https://www.stevens.edu/profile/fliu22" class="team-link">
+        🔗 View Profile
+    </a>
+</div>
+
+<!-- Team Member 2 -->
+<div class="team-member">
+    <div class="team-avatar">
+        <img src="static/images/jun-en-ding.jpg" alt="Jun-En Ding" class="team-avatar-img">
+    </div>
+    <h3 class="team-name">Jun-En Ding</h3>
+    <p class="team-position">PhD Student</p>
+    <a href="https://www.jun-ending.com/" class="team-link">
+        🔗 View Profile
+    </a>
+</div>
+
+<!-- Team Member 3 -->
+<div class="team-member">
+    <div class="team-avatar">
+        <img src="static/images/jin-chun-zhi.jpg" alt="Shihao Yang" class="team-avatar-img">
+    </div>
+    <h3 class="team-name">Shihao Yang</h3>
+    <p class="team-position">PhD Student</p>
+</div>
+
+<!-- Team Member 4 -->
+<div class="team-member">
+    <div class="team-avatar">
+        <img src="static/images/hao-zhu.png" alt="Hao Zhu" class="team-avatar-img">
+    </div>
+    <h3 class="team-name">Hao Zhu</h3>
+    <p class="team-position">PhD Student</p>
+    <a href="https:/www.linkedin.com/in/hao-zhu-bci" class="team-link">
+        🔗 View Profile
+    </a>
+</div>
+
+<!-- Team Member 5 -->
+<div class="team-member">
+    <div class="team-avatar">
+        <img src="static/images/wang.jpg" alt="Ethan Wang" class="team-avatar-img">
+    </div>
+    <h3 class="team-name">Ethan Wang</h3>
+    <p class="team-position">PhD Student</p>
+</div>
+
+
+<!-- Team Member 6 -->
+<div class="team-member">
+    <div class="team-avatar">
+        <img src="static/images/xiaoyu-sun.jpg" alt="Xiaoyu Sun" class="team-avatar-img">
+    </div>
+    <h3 class="team-name">Xiaoyu Sun</h3>
+    <p class="team-position">Research Assistant</p>
+    <a href="https://www.linkedin.com/in/xiaoyu-sun-a3b161297" class="team-link">
+        🔗 View Profile
+    </a>
+</div>
+
+<!-- Team Member 7 -->
+<div class="team-member">
+    <div class="team-avatar">
+        <img src="static/images/zirui-wen.jpg" alt="Zirui Wen" class="team-avatar-img">
+    </div>
+    <h3 class="team-name">Zirui Wen</h3>
+    <p class="team-position">Research Assistant</p>
+    <a href="https://www.linkedin.com/in/zirui-wen-76320b327" class="team-link">
+        🔗 View Profile
+    </a>
+</div>
+
+<!-- Team Member 8 -->
+<div class="team-member">
+    <div class="team-avatar">
+        <img src="static/images/qi-sheng.jpg" alt="Qi Sheng" class="team-avatar-img">
+    </div>
+    <h3 class="team-name">Qi Sheng</h3>
+    <p class="team-position">Research Assistant</p>
+    <a href="https://www.linkedin.com/in/qs19981101" class="team-link">
+        🔗 View Profile
+    </a>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About AI Neuroimaging Lab </h2>
+            <p class="section-subtitle">
+                A leading academic lab dedicated to advancing neuroscience through cutting-edge research in EEG, mental health, and neuroimaging
+            </p>
+
+            <div class="hospital-info">
+                <div class="info-card">
+                    <div class="info-icon">🧠📶</div>
+                    <h3 class="info-title">EEG & Neurophysiology</h3>
+                    <p class="info-description">
+                        By advancing non-invasive brain monitoring using electroencephalography (EEG) and intracranial EEG (iEEG) to better localize epileptic foci and understand neural dynamics.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🤖🧠 </div>
+                    <h3 class="info-title">LLMs in Neuroscience</h3>
+                    <p class="info-description">
+                        Our lab proposes a novel large language model framework focused on epilepsy, seizure activity, or the diagnosis of brain disorders. More broadly, LLMs support the discovery of biomarkers, facilitate patient stratification, and enhance the interpretation of complex neurological data. This growing field bridges artificial intelligence and brain science, offering powerful tools to advance the study and treatment of epilepsy and related neurological conditions.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🧠🔬</div>
+                    <h3 class="info-title"> Multimodal Brain Imaging</h3>
+                    <p class="info-description">
+                        Combining EEG, MEG, and structural imaging data, we develop multimodal fusion models to map brain source activity with high spatiotemporal accuracy. Our attention-based neural networks extract latent representations from multiple modalities, contributing to next-generation neuroimaging for clinical and research applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section" id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications & Research</h2>
+            <p class="section-subtitle">
+                Our latest contributions to the field of AI Neuroimaging
+            </p>
+
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <div class="publication-badge">JMIR'2025</div>
+                  
+                    <h3 class="publication-title">
+                      Clinical Value of ChatGPT for Epilepsy Presurgical Decision-Making:<br>
+                      Systematic Evaluation of Seizure Semiology Interpretation
+                    </h3>
+                  
+                    <p class="publication-authors">
+                      Yaxi Luo, Meng Jiao, Neel Fotedar, Jun-En Ding, Ioannis Karakis, Vikram R Rao, 
+                      Melissa Asmar, Xiaochen Xian, Orwa Aboud, Yuxin Wen, Jack J Lin, 
+                      Fang-Ming Hung, Hai Sun, Felix Rosenow, Feng Liu
+                    </p>
+                  
+                    <p class="publication-description">
+                      This study evaluates the use of ChatGPT for localizing epileptogenic zones (EZs) from seizure semiology. 
+                      ChatGPT outperformed epileptologists in commonly affected brain regions and achieved strong weighted sensitivity, 
+                      supporting its clinical value in epilepsy surgery decision-making.
+                    </p>
+                  
+                    <div class="publication-links">
+                      <a href="https://www.jmir.org/2025/1/e69173/PDF" class="publication-link">📄 Paper</a>
+                      <a href="https://aiepilepsy.stevens.edu/"
+                      class="publication-link">🎥 Demo</a>
+                    </div>
+                  </div>
+                       
+
+                <div class="publication-card">
+                    <div class="publication-badge">NeuroImage'2024</div>
+                    <h3 class="publication-title">
+                        XDL-ESI: Electrophysiological Sources Imaging via Explainable Deep Learning Framework with Validation on Simultaneous EEG and iEEG</h3>
+                    <p class="publication-authors">
+                        Meng Jiao, Xiaochen Xian, Boyu Wang, Yu Zhang, Shihao Yang, Spencer Chen, Hai Sun, Feng Liu
+                    </p>
+                    <p class="publication-description">
+                        This paper proposes XDL-ESI, an interpretable deep learning framework for EEG source imaging. By integrating spatial attention with temporal signal representation and validating against simultaneous iEEG recordings, XDL-ESI achieves state-of-the-art source localization accuracy while offering model explainability. The framework bridges noninvasive and invasive neurophysiological data, aiding precise epileptogenic zone identification.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://pdf.sciencedirectassets.com/272508/1-s2.0-S1053811924X00130/1-s2.0-S1053811924002994/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQD76QVWP2i7Yf8G%2BqgWeBdNYFMhcYf%2BqZmE3nESv64MHgIhAIRG4qAOgZKTo1ThNSdJY6e6rWHrtTYlrfagGDR62SpkKrwFCMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQBRoMMDU5MDAzNTQ2ODY1IgzEzcZUQO%2B%2BCTCix44qkAUIkoW4plZ%2BP%2F1IIGc61NVVMF8kYTw9bsIfGIpZB5subai78IGZdhWlkl7hPRAI%2BTRMAV102sFuG%2B6b%2BLU1TL68GvEtSVaygtNjcrjyE1Bf75JL3lDRPDPTRKv9uMMWU8cF0ATmGCJlwBXML5KtQlJN8LOfZgaeeDlglx9jrZMfjmPA0IOVtUQXRjj%2BA8XPJlZIE8Q6nfwJpKUVaqusFLaCDmWlTVohu9U6HGVdmzv17DvW0nFMOKmCdA2iZcrsgqHoWiWdGH%2Br0rj8oy4DiO5AdsM%2BGdRzWypyMUjYKcsDI2SwPYHdaMTTOrLU%2BuwP1lc07ZO3YR3iubrDLKVXeKc0AUiQCxkBbMTBsDwoZWouXGCq1fjUtx8ZQwEclz%2FLHRV7DNjt6bvLgXMq6gRHDRxkcsanlaOgHShGL%2BE2Izk3qJg6Rc9wT7H4btNAG2FUb9kvouWL0%2BaDqwaeaH2ionT8qhzCHbjPjS4PixOdvgBAbzU9AOgvMpJVjM0n2%2BqSFy99egRSHI0vdt7EMqgW%2FD5LnWE7b4NLyX%2F%2FP5HyUkj%2F0lkJUKYBlcCQaPxLJaS7m4mQ%2BLzyH2Fkm%2Be3LQIuHNARxOE3vtqazHNBxSpsCd9zzIgy%2B0uEG4qsBNj%2FMDByj6Em6xplpmA5Ip7sSuGndo8i3ywdDq%2F5oXX2UqAYl%2Bb3cEah6ABu00K1f%2FmCzydnHPZ9B%2BDFUoe2wEgH1JwkK9uwVVHR69ZX1tD5c7%2FXWA762vMOhsHPLC3c6j7TaiRU%2BxUh%2Bf1RwH24srjH4gz2ReilmMbAZiNxa6HfD04aWgzWWY5yGMA6Y53McsPwNMAzTyeNx9YA9abPJtnDTNt9AgfDDdrCa13zRqg2Cph9DTXmZzCT8qjEBjqwAQuE7g8Fe8qoonwr0PIAtC8CSzDowJicNW%2FDx8yDmPnwTmDP%2FLGCfQhNvLBVupFjADXNfNlIsAs59kn7XN%2B%2BtYjxkzW4EZiAyegJRlCL18U3tX1cQsw1EoehF3q7XGJiJSaflBoU6nAloVUKUxnJkPSxuTDlpRyZtHfiVSFg2hCFtXzVS9mMXtIVhcAI4r%2BZBlpLqzveKLSLQoRRJHvyF82lIl9hbQOmHTs7qtfIoKU3&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250730T163600Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYQTJP3T3V%2F20250730%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=99514e71b914fb9c852fd41d9209b582fcfc1d5ec792a934106bdbf8ecfcfb8f&hash=9c040660fbd0d397c92d882e572a4472619c6158259b63af89c35f4bf7176f41&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S1053811924002994&tid=spdf-86f3c445-67fb-45d6-89cf-4b4523739fdc&sid=e65396a169a51346946984b25ba876df5401gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=0f105d59565956570602&rr=967645bebc379cc1&cc=us" class="publication-link">📄 Paper</a>
+                      </div>                      
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-badge">IEEE JBHI'2024</div>
+                    <h3 class="publication-title">
+                        Multi-Modal Electrophysiological Source Imaging With Attention Neural Networks Based on Deep Fusion of EEG and MEG</h3>
+                      
+                    <p class="publication-authors">
+                        Meng Jiao, Shihao Yang, Xiaochen Xian, Neel Fotedar, Feng Liu
+                    </p>
+                    <p class="publication-description">
+                        This paper presents a novel deep fusion framework that integrates EEG and MEG data for precise brain source localization. 
+                        The proposed attention neural network architecture leverages cross-modal correlations to enhance spatial resolution 
+                        and improve source imaging accuracy. Evaluated on real and simulated data, the model demonstrates robust performance 
+                        and potential for clinical neuroimaging applications.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://ieeexplore.ieee.org/ielx8/7333/10398877/10587309.pdf?tp=&arnumber=10587309&isnumber=10398877&ref=aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20v" class="publication-link">📄 Paper</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Get in Touch</h3>
+                <p>
+                    Interested in collaborating or learning more about our research?<br>
+                    We welcome partnerships with academic institutions, industry partners, and fellow researchers.
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    <strong>AI Neuroimaging Research Team</strong><br>
+                    📧 <a href="fliu22@stevens.edu" class="footer-link">fliu22@stevens.edu</a><br>
+                    🏥 <a href="https://www.stevens.edu/profile/fliu22" class="footer-link">www.stevens.edu</a><br>
+                    📍 Hoboken, New Jersey, USA
+                </p>
+                <p
+                    style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.6;">
+                    © AI Neuroimaging Research Team. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.info-card, .team-member, .publication-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+
+</html>
